@@ -1,0 +1,35 @@
+{
+  "categories": [
+    {
+      "_id": "1",
+      "name": "electronics",
+      "displayName": "Electronics",
+      "id": "73bc"
+    },
+    {
+      "_id": "2",
+      "name": "clothing",
+      "displayName": "Clothing",
+      "id": "0ef4"
+    }
+  ],
+  "products": [
+    {
+      "inStock": 4,
+      "id": "2027"
+    },
+    {
+      "inStock": 9,
+      "id": "b59d"
+    },
+    {
+      "inStock": 15,
+      "id": "b66e"
+    },
+    {
+      "inStock": 10,
+      "id": "82c2"
+    }
+  ],
+  "cart": []
+}
