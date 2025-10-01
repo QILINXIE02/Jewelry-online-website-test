@@ -4,45 +4,51 @@
       "id": "1",
       "name": "rings",
       "displayName": "Rings",
-      "description": "Handcrafted crystal and gemstone rings with unique designs."
+      "description": "Unique handcrafted rings with crystals and gemstones for every style."
     },
     {
       "id": "2",
       "name": "necklaces",
       "displayName": "Necklaces",
-      "description": "Beautiful handcrafted crystal and stone necklaces."
+      "description": "Elegant handcrafted crystal and gemstone necklaces for any occasion."
     },
     {
       "id": "3",
       "name": "bracelets",
       "displayName": "Bracelets",
-      "description": "Colorful crystal and gemstone bracelets, handmade."
+      "description": "Handmade bracelets with colorful gemstones and natural crystals."
     },
     {
       "id": "4",
       "name": "earrings",
       "displayName": "Earrings",
-      "description": "Handmade earrings with crystals, stones, and natural elements."
+      "description": "Delicate earrings crafted with crystals, stones, and natural elements."
     }
   ],
   "products": [
     {
-      "inStock": 14,
-      "id": "101"
+      "id": "101",
+      "category": "rings",
+      "name": "Amethyst Crystal Ring",
+      "description": "Handcrafted amethyst crystal ring set in silver, perfect for daily wear or meditation.",
+      "price": 35,
+      "inStock": 15,
+      "image": "https://images.pexels.com/photos/2089339/pexels-photo-2089339.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "inStock": 11,
-      "id": "102"
-    },
-    {
-      "inStock": 9,
-      "id": "103"
+      "id": "102",
+      "category": "rings",
+      "name": "Rose Quartz Ring",
+      "description": "Soft rose quartz gemstone ring handmade for love and energy balance.",
+      "price": 38,
+      "inStock": 12,
+      "image": "https://images.pexels.com/photos/1770801/pexels-photo-1770801.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "201",
       "category": "necklaces",
       "name": "Amethyst Pendant Necklace",
-      "description": "Handmade amethyst crystal pendant on cord.",
+      "description": "Handcrafted amethyst crystal pendant on a durable cotton cord, perfect for everyday wear.",
       "price": 40,
       "inStock": 18,
       "image": "https://images.pexels.com/photos/2089339/pexels-photo-2089339.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -50,53 +56,35 @@
     {
       "id": "202",
       "category": "necklaces",
-      "name": "Rose Quartz Necklace",
-      "description": "Delicate rose quartz pendant on adjustable chain.",
+      "name": "Rose Quartz Pendant Necklace",
+      "description": "Delicate rose quartz pendant on an adjustable chain, ideal for layering or solo wear.",
       "price": 45,
       "inStock": 15,
       "image": "https://images.pexels.com/photos/1840450/pexels-photo-1840450.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "203",
-      "category": "necklaces",
-      "name": "Citrine Necklace",
-      "description": "Handcrafted citrine crystal pendant necklace.",
-      "price": 50,
-      "inStock": 12,
-      "image": "https://images.pexels.com/photos/1385914/pexels-photo-1385914.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
       "id": "301",
       "category": "bracelets",
-      "name": "Amethyst Beaded Bracelet",
-      "description": "Handmade amethyst beaded bracelet.",
-      "price": 35,
-      "inStock": 20,
-      "image": "https://images.pexels.com/photos/1714843/pexels-photo-1714843.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "id": "302",
-      "category": "bracelets",
-      "name": "Rose Quartz Bracelet",
-      "description": "Delicate rose quartz gemstone bracelet.",
-      "price": 40,
-      "inStock": 18,
-      "image": "https://images.pexels.com/photos/1770798/pexels-photo-1770798.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "id": "303",
-      "category": "bracelets",
       "name": "Citrine Beaded Bracelet",
-      "description": "Handcrafted citrine crystal bracelet with natural stones.",
+      "description": "Handmade citrine gemstone bracelet with natural crystals for positive energy.",
       "price": 50,
       "inStock": 15,
       "image": "https://images.pexels.com/photos/1385916/pexels-photo-1385916.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
+      "id": "302",
+      "category": "bracelets",
+      "name": "Amethyst Beaded Bracelet",
+      "description": "Elegant amethyst beaded bracelet handcrafted for style and wellness.",
+      "price": 35,
+      "inStock": 20,
+      "image": "https://images.pexels.com/photos/1714843/pexels-photo-1714843.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
       "id": "401",
       "category": "earrings",
       "name": "Amethyst Drop Earrings",
-      "description": "Handmade amethyst crystal drop earrings.",
+      "description": "Handmade amethyst crystal drop earrings, lightweight and stylish.",
       "price": 35,
       "inStock": 12,
       "image": "https://images.pexels.com/photos/2092312/pexels-photo-2092312.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -104,20 +92,11 @@
     {
       "id": "402",
       "category": "earrings",
-      "name": "Rose Quartz Earrings",
-      "description": "Delicate rose quartz gemstone earrings, handmade.",
+      "name": "Rose Quartz Stud Earrings",
+      "description": "Delicate rose quartz gemstone stud earrings, perfect for daily elegance.",
       "price": 40,
       "inStock": 15,
       "image": "https://images.pexels.com/photos/1770801/pexels-photo-1770801.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "id": "403",
-      "category": "earrings",
-      "name": "Citrine Stud Earrings",
-      "description": "Handcrafted citrine stud earrings with natural crystals.",
-      "price": 45,
-      "inStock": 10,
-      "image": "https://images.pexels.com/photos/1385915/pexels-photo-1385915.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ],
   "cart": []
