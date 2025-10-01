@@ -1,34 +1,123 @@
 {
   "categories": [
     {
-      "_id": "1",
-      "name": "electronics",
-      "displayName": "Electronics",
-      "id": "73bc"
+      "id": "1",
+      "name": "rings",
+      "displayName": "Rings",
+      "description": "Handcrafted crystal and gemstone rings with unique designs."
     },
     {
-      "_id": "2",
-      "name": "clothing",
-      "displayName": "Clothing",
-      "id": "0ef4"
+      "id": "2",
+      "name": "necklaces",
+      "displayName": "Necklaces",
+      "description": "Beautiful handcrafted crystal and stone necklaces."
+    },
+    {
+      "id": "3",
+      "name": "bracelets",
+      "displayName": "Bracelets",
+      "description": "Colorful crystal and gemstone bracelets, handmade."
+    },
+    {
+      "id": "4",
+      "name": "earrings",
+      "displayName": "Earrings",
+      "description": "Handmade earrings with crystals, stones, and natural elements."
     }
   ],
   "products": [
     {
-      "inStock": 4,
-      "id": "2027"
+      "inStock": 14,
+      "id": "101"
+    },
+    {
+      "inStock": 11,
+      "id": "102"
     },
     {
       "inStock": 9,
-      "id": "b59d"
+      "id": "103"
     },
     {
+      "id": "201",
+      "category": "necklaces",
+      "name": "Amethyst Pendant Necklace",
+      "description": "Handmade amethyst crystal pendant on cord.",
+      "price": 40,
+      "inStock": 18,
+      "image": "https://images.pexels.com/photos/2089339/pexels-photo-2089339.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "202",
+      "category": "necklaces",
+      "name": "Rose Quartz Necklace",
+      "description": "Delicate rose quartz pendant on adjustable chain.",
+      "price": 45,
       "inStock": 15,
-      "id": "b66e"
+      "image": "https://images.pexels.com/photos/1840450/pexels-photo-1840450.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
+      "id": "203",
+      "category": "necklaces",
+      "name": "Citrine Necklace",
+      "description": "Handcrafted citrine crystal pendant necklace.",
+      "price": 50,
+      "inStock": 12,
+      "image": "https://images.pexels.com/photos/1385914/pexels-photo-1385914.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "301",
+      "category": "bracelets",
+      "name": "Amethyst Beaded Bracelet",
+      "description": "Handmade amethyst beaded bracelet.",
+      "price": 35,
+      "inStock": 20,
+      "image": "https://images.pexels.com/photos/1714843/pexels-photo-1714843.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "302",
+      "category": "bracelets",
+      "name": "Rose Quartz Bracelet",
+      "description": "Delicate rose quartz gemstone bracelet.",
+      "price": 40,
+      "inStock": 18,
+      "image": "https://images.pexels.com/photos/1770798/pexels-photo-1770798.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "303",
+      "category": "bracelets",
+      "name": "Citrine Beaded Bracelet",
+      "description": "Handcrafted citrine crystal bracelet with natural stones.",
+      "price": 50,
+      "inStock": 15,
+      "image": "https://images.pexels.com/photos/1385916/pexels-photo-1385916.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "401",
+      "category": "earrings",
+      "name": "Amethyst Drop Earrings",
+      "description": "Handmade amethyst crystal drop earrings.",
+      "price": 35,
+      "inStock": 12,
+      "image": "https://images.pexels.com/photos/2092312/pexels-photo-2092312.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "402",
+      "category": "earrings",
+      "name": "Rose Quartz Earrings",
+      "description": "Delicate rose quartz gemstone earrings, handmade.",
+      "price": 40,
+      "inStock": 15,
+      "image": "https://images.pexels.com/photos/1770801/pexels-photo-1770801.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "403",
+      "category": "earrings",
+      "name": "Citrine Stud Earrings",
+      "description": "Handcrafted citrine stud earrings with natural crystals.",
+      "price": 45,
       "inStock": 10,
-      "id": "82c2"
+      "image": "https://images.pexels.com/photos/1385915/pexels-photo-1385915.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ],
   "cart": []

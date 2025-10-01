@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import { When } from 'react-if';
 
-import Typography from '@material-ui/core/Typography'
+import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,32 +11,42 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(8, 0, 6),
   },
   categoryName: {
-    textTransform: 'uppercase'
-  }
+    textTransform: 'uppercase',
+  },
 }));
 
-const CurrentCategory = ({ activeCategory }) => {
-
+const CurrentCategory = ({ activeCategory, categories = [] }) => {
   const classes = useStyles();
+
+  const currentCat = categories.find((cat) => cat.name === activeCategory);
 
   return (
     <When condition={!!activeCategory}>
       <div className={classes.heroContent}>
         <Container maxWidth="sm">
-          <Typography component="h1" variant="h2" className={classes.categoryName} align="center" color="textPrimary" gutterBottom>
+          <Typography
+            component="h1"
+            variant="h2"
+            className={classes.categoryName}
+            align="center"
+            color="textPrimary"
+            gutterBottom
+          >
             {activeCategory}
           </Typography>
-          <Typography variant="h5" align="center" color="textSecondary" paragraph>
-            Category Description Goes Here
-        </Typography>
+
+          <Typography variant="subtitle1" align="center" color="textSecondary">
+            {currentCat ? currentCat.description : "Select a category to see details"}
+          </Typography>
         </Container>
       </div>
     </When>
   );
-}
+};
 
-const mapStateToProps = state => ({
-  activeCategory: state.categories.activeCategory
+const mapStateToProps = (state) => ({
+  activeCategory: state.categories.activeCategory,
+  categories: state.categories?.categories || [], // ✅ safe default
 });
 
 export default connect(mapStateToProps)(CurrentCategory);

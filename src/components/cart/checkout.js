@@ -39,7 +39,12 @@ const useStyles = makeStyles((theme) => ({
 
 function Checkout({ cart }) {
   const classes = useStyles();
-  const total = cart.items.reduce((ttl, product) => ttl + product.price, 0);
+
+  // ✅ Safe reduce with Number conversion
+  const total = cart.items.reduce(
+    (ttl, product) => ttl + (Number(product?.price) || 0),
+    0
+  );
 
   return (
     <div className={classes.layout}>
@@ -49,12 +54,20 @@ function Checkout({ cart }) {
             Order summary
           </Typography>
           <List disablePadding>
-            {cart.items.map((product) => (
-              <ListItem className={classes.listItem} key={product._id}>
-                <ListItemText primary={product.name} secondary={product.description} />
-                <Typography variant="body2">${product.price.toFixed(2)}</Typography>
-              </ListItem>
-            ))}
+            {cart.items.map((product) => {
+              const price = Number(product?.price) || 0;
+              return (
+                <ListItem className={classes.listItem} key={product.id}>
+                  <ListItemText
+                    primary={product.name}
+                    secondary={product.description}
+                  />
+                  <Typography variant="body2">
+                    ${price.toFixed(2)}
+                  </Typography>
+                </ListItem>
+              );
+            })}
             <ListItem className={classes.listItem}>
               <ListItemText primary="Total" />
               <Typography variant="subtitle1" className={classes.total}>
@@ -68,18 +81,18 @@ function Checkout({ cart }) {
               <Typography variant="h6" gutterBottom className={classes.title}>
                 Billing Address
               </Typography>
-              <TextField fullWidth id="name" name="name" label="Full Name" margin="dense"/>
-              <TextField fullWidth id="address" name="address" label="Address" margin="dense"/>
-              <TextField fullWidth id="city" name="city" label="City" margin="dense"/>
-              <TextField fullWidth id="state" name="state" label="State" margin="dense"/>
-              <TextField fullWidth id="zip" name="zip" label="Zip" margin="dense"/>
+              <TextField fullWidth id="name" label="Full Name" margin="dense" />
+              <TextField fullWidth id="address" label="Address" margin="dense" />
+              <TextField fullWidth id="city" label="City" margin="dense" />
+              <TextField fullWidth id="state" label="State" margin="dense" />
+              <TextField fullWidth id="zip" label="Zip" margin="dense" />
             </Grid>
 
             <Grid item xs={12} sm={6}>
               <Typography variant="h6" gutterBottom className={classes.title}>
                 Payment details
               </Typography>
-              <TextField fullWidth id="cc_number" name="cc_number" label="Credit Card #" margin="dense"/>
+              <TextField fullWidth id="cc_number" label="Credit Card #" margin="dense" />
               <TextField
                 fullWidth
                 id="date"
@@ -88,7 +101,7 @@ function Checkout({ cart }) {
                 InputLabelProps={{ shrink: true }}
                 margin="dense"
               />
-              <TextField fullWidth id="cvv" name="cvv" label="CVV" margin="dense"/>
+              <TextField fullWidth id="cvv" label="CVV" margin="dense" />
             </Grid>
           </Grid>
 
@@ -105,7 +118,6 @@ function Checkout({ cart }) {
   );
 }
 
-const mapStateToProps = state => ({ cart: state.cart });
+const mapStateToProps = (state) => ({ cart: state.cart });
 
 export default connect(mapStateToProps)(Checkout);
- 
