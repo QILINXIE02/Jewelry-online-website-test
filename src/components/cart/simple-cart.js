@@ -9,7 +9,7 @@ import { removeFromCart } from '../../store/cart';
 const useStyles = makeStyles(theme => ({
   item: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: theme.spacing(1), padding: theme.spacing(1), borderBottom: '1px solid #eee' },  remove: { cursor: "pointer", color: "#fff", background: "#800", borderRadius: "50%", padding: "0 6px" },
   footer: { marginTop: theme.spacing(2), textAlign: 'center' },
-  header: { marginBottom: theme.spacing(1), fontWeight: 600 }
+  header: { marginBottom: theme.spacing(1), fontWeight: 300 }
 }));
 
 const SimpleCart = ({ cart, removeFromCart }) => {
