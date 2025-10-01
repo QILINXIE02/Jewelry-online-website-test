@@ -36,7 +36,7 @@ const CurrentCategory = ({ activeCategory, categories = [] }) => {
           </Typography>
 
           <Typography variant="subtitle1" align="center" color="textSecondary">
-            {currentCat ? currentCat.description : "Select a category to see details"}
+            {currentCat ? currentCat.description : " Gem Boutique - HandCrafted Jewlry:                       Select a category to see details "}
           </Typography>
         </Container>
       </div>
