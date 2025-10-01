@@ -46,7 +46,7 @@ const CurrentCategory = ({ activeCategory, categories = [] }) => {
 
 const mapStateToProps = (state) => ({
   activeCategory: state.categories.activeCategory,
-  categories: state.categories?.categories || [], // ✅ safe default
+  categories: state.categories?.categories || [], 
 });
 
 export default connect(mapStateToProps)(CurrentCategory);

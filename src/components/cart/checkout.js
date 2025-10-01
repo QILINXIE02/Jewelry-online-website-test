@@ -1,100 +1,125 @@
-// src/components/cart/Checkout.js
 import React from 'react';
 import { connect } from 'react-redux';
+ 
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Box,
-  Paper,
-  Typography,
-  List,
-  ListItem,
-  ListItemText,
-  Grid,
-  TextField,
-  Button
-} from '@material-ui/core';
-
+import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+ 
 const useStyles = makeStyles((theme) => ({
-  layout: { width: 'auto', margin: theme.spacing(3) },
-  paper: { padding: theme.spacing(3) },
-  total: { fontWeight: 700 },
-  listItem: { paddingTop: theme.spacing(1), paddingBottom: theme.spacing(1) },
+  listItem: { padding: theme.spacing(1, 0) },
+  total: { fontWeight: 400 },
+  title: { marginTop: theme.spacing(2) },
+  layout: {
+    width: 'auto',
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
+      width: 600,
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
+  },
+  paper: {
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
+    padding: theme.spacing(2),
+    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
+      marginTop: theme.spacing(6),
+      marginBottom: theme.spacing(6),
+      padding: theme.spacing(3),
+    },
+  },
 }));
-
+ 
 function Checkout({ cart }) {
   const classes = useStyles();
-
-  // Safely compute total price
-  const total = cart.items.reduce((sum, p) => sum + (Number(p?.price) || 0), 0);
-
+ 
+  // ✅ Safe reduce with Number conversion
+  const total = cart.items.reduce(
+    (ttl, product) => ttl + (Number(product?.price) || 0),
+    0
+  );
+ 
   return (
-    <Box className={classes.layout}>
-      <Paper className={classes.paper}>
-        <Typography variant="h6" gutterBottom>
-          Order Summary
-        </Typography>
-        <List disablePadding>
-          {cart.items.map((product) => (
-            <ListItem key={product._id || product.id} className={classes.listItem}>
-              <ListItemText
-                primary={product.name || 'Unnamed product'}
-                secondary={product.description || 'No description'}
-              />
-              <Typography variant="body2">
-                ${Number(product.price || 0).toFixed(2)}
+    <div className={classes.layout}>
+      <form>
+        <Paper className={classes.paper}>
+          <Typography variant="h6" gutterBottom>
+            Order summary
+          </Typography>
+          <List disablePadding>
+            {cart.items.map((product) => {
+              const price = Number(product?.price) || 0;
+              return (
+                <ListItem className={classes.listItem} key={product.id}>
+                  <ListItemText
+                    primary={product.name}
+                    secondary={product.description}
+                  />
+                  <Typography variant="body2">
+                    ${price.toFixed(2)}
+                  </Typography>
+                </ListItem>
+              );
+            })}
+            <ListItem className={classes.listItem}>
+              <ListItemText primary="Total" />
+              <Typography variant="subtitle1" className={classes.total}>
+                ${total.toFixed(2)}
               </Typography>
             </ListItem>
-          ))}
-          <ListItem className={classes.listItem}>
-            <ListItemText primary="Total" />
-            <Typography variant="subtitle1" className={classes.total}>
-              ${total.toFixed(2)}
-            </Typography>
-          </ListItem>
-        </List>
-
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <Typography variant="h6" gutterBottom>
-              Billing Address
-            </Typography>
-            {['Full Name', 'Address', 'City', 'State', 'Zip'].map((label) => (
-              <TextField key={label} fullWidth label={label} margin="dense" />
-            ))}
+          </List>
+ 
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <Typography variant="h6" gutterBottom className={classes.title}>
+                Billing Address
+              </Typography>
+              <TextField fullWidth id="name" label="Full Name" margin="dense" />
+              <TextField fullWidth id="address" label="Address" margin="dense" />
+              <TextField fullWidth id="city" label="City" margin="dense" />
+              <TextField fullWidth id="state" label="State" margin="dense" />
+              <TextField fullWidth id="zip" label="Zip" margin="dense" />
+            </Grid>
+ 
+            <Grid item xs={12} sm={6}>
+              <Typography variant="h6" gutterBottom className={classes.title}>
+                Payment details
+              </Typography>
+              <TextField fullWidth id="cc_number" label="Credit Card #" margin="dense" />
+              <TextField
+                fullWidth
+                id="date"
+                label="Expiration"
+                type="date"
+                InputLabelProps={{ shrink: true }}
+                margin="dense"
+              />
+              <TextField fullWidth id="cvv" label="CVV" margin="dense" />
+            </Grid>
           </Grid>
-
-          <Grid item xs={12} sm={6}>
-            <Typography variant="h6" gutterBottom>
-              Payment Details
-            </Typography>
-            <TextField fullWidth label="Credit Card #" margin="dense" />
-            <TextField
-              fullWidth
-              label="Expiration"
-              type="date"
-              InputLabelProps={{ shrink: true }}
-              margin="dense"
-            />
-            <TextField fullWidth label="CVV" margin="dense" />
+ 
+          <Grid container alignItems="center" justifyContent="center" spacing={5}>
+            <Grid item>
+              <Button variant="contained" color="primary">
+                Place Your Order
+              </Button>
+            </Grid>
           </Grid>
-        </Grid>
-
-        <Box display="flex" justifyContent="center" mt={3}>
-          <Button
-            variant="contained"
-            color="primary"
-            disabled={cart.items.length === 0} // disable if cart is empty
-          >
-            Place Your Order
-          </Button>
-        </Box>
-      </Paper>
-    </Box>
+        </Paper>
+      </form>
+    </div>
   );
 }
-
-const mapStateToProps = (state) => ({
-  cart: state.cart || { items: [] },
-});
-
+ 
+const mapStateToProps = (state) => ({ cart: state.cart });
+ 
 export default connect(mapStateToProps)(Checkout);
+ 
+ 
