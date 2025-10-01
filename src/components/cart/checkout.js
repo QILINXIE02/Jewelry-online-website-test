@@ -1,71 +1,58 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link as RouterLink } from 'react-router-dom';
+import { When } from 'react-if';
+import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Box,
-  Paper,
-  Typography,
-  List,
-  ListItem,
-  ListItemText,
-  Grid,
-  TextField,
-  Button
-} from '@material-ui/core';
+import { removeFromCart } from '../../store/cart';
 
-const useStyles = makeStyles((theme) => ({
-  layout: { width: 'auto', margin: theme.spacing(3) },
-  paper: { padding: theme.spacing(3) },
-  total: { fontWeight: 700 },
-  listItem: { paddingTop: theme.spacing(1), paddingBottom: theme.spacing(1) },
+const useStyles = makeStyles(theme => ({
+  drawer: { width: 320, top: '5em', flexShrink: 0 },
+  item: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: theme.spacing(1), padding: theme.spacing(1), borderBottom: '1px solid #eee' },
+  remove: { cursor: 'pointer', fontWeight: 700 },
+  footer: { marginTop: theme.spacing(2), textAlign: 'center' },
+  header: { marginBottom: theme.spacing(1), fontWeight: 600 }
 }));
 
-function Checkout({ cart }) {
+const SimpleCart = ({ removeFromCart, cart }) => {
   const classes = useStyles();
-  const total = cart.items.reduce((sum, p) => sum + (Number(p?.price) || 0), 0);
+
+  // safely handle cart items
+  const items = Array.isArray(cart?.items) ? cart.items : [];
+  const total = items.reduce((sum, i) => sum + (Number(i.price) || 0), 0);
+
+  const handleRemove = (item) => {
+    if (typeof removeFromCart === 'function') removeFromCart(item);
+  };
 
   return (
-    <Box className={classes.layout}>
-      <Paper className={classes.paper}>
-        <Typography variant="h6" gutterBottom>Order summary</Typography>
-        <List disablePadding>
-          {cart.items.map((product) => (
-            <ListItem key={product.id} className={classes.listItem}>
-              <ListItemText primary={product.name} secondary={product.description} />
-              <Typography variant="body2">${Number(product.price).toFixed(2)}</Typography>
-            </ListItem>
+    <When condition={items.length > 0}>
+      <div className="simple-cart">
+        <Typography variant="h6" className={classes.header}>Your Boutique Basket</Typography>
+        <ul style={{listStyle: 'none', padding: 0}}>
+          {items.map(item => (
+            <li key={item._id || item.name} className={classes.item}>
+              <Link component={RouterLink} to={`/product/${item._id}`} underline="hover">
+                {item.name}
+              </Link>
+              <span className={classes.remove} onClick={() => handleRemove(item)}>×</span>
+            </li>
           ))}
-          <ListItem className={classes.listItem}>
-            <ListItemText primary="Total" />
-            <Typography variant="subtitle1" className={classes.total}>
-              ${total.toFixed(2)}
-            </Typography>
-          </ListItem>
-        </List>
-
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <Typography variant="h6" gutterBottom>Billing Address</Typography>
-            {['Full Name', 'Address', 'City', 'State', 'Zip'].map(label => (
-              <TextField key={label} fullWidth label={label} margin="dense" />
-            ))}
-          </Grid>
-
-          <Grid item xs={12} sm={6}>
-            <Typography variant="h6" gutterBottom>Payment details</Typography>
-            <TextField fullWidth label="Credit Card #" margin="dense" />
-            <TextField fullWidth label="Expiration" type="date" InputLabelProps={{ shrink: true }} margin="dense" />
-            <TextField fullWidth label="CVV" margin="dense" />
-          </Grid>
-        </Grid>
-
-        <Box display="flex" justifyContent="center" mt={3}>
-          <Button variant="contained" color="primary">Place Your Order</Button>
-        </Box>
-      </Paper>
-    </Box>
+        </ul>
+        <div className={classes.footer}>
+          <Typography variant="subtitle1">Total: ${total.toFixed(2)}</Typography>
+          <Button variant="contained" color="primary" component={RouterLink} to="/cart" style={{marginTop: '10px'}}>
+            Checkout
+          </Button>
+        </div>
+      </div>
+    </When>
   );
-}
+};
 
-const mapStateToProps = state => ({ cart: state.cart });
-export default connect(mapStateToProps)(Checkout);
+const mapStateToProps = state => ({ cart: state.cart || { items: [] } });
+const mapDispatchToProps = { removeFromCart };
+
+export default connect(mapStateToProps, mapDispatchToProps)(SimpleCart);

@@ -29,6 +29,17 @@ const Product = ({ id, getProduct, addToCart, activeProduct }) => {
   const loadProduct = useCallback(() => getProduct(id), [getProduct, id]);
   useEffect(() => loadProduct(), [loadProduct]);
 
+  // Guard against undefined activeProduct
+  if (!activeProduct) return <Typography>Loading...</Typography>;
+
+  const handleAddToCart = () => {
+    if (typeof addToCart === 'function') {
+      addToCart(activeProduct);
+    } else {
+      console.error('addToCart is not a function!', addToCart);
+    }
+  };
+
   return (
     <div className={classes.heroContent}>
       <SimpleCart />
@@ -43,8 +54,9 @@ const Product = ({ id, getProduct, addToCart, activeProduct }) => {
               <Grid item xs={6}><Typography variant="h5" align="right">${activeProduct.price}</Typography></Grid>
             </Grid>
           </Paper>
+
           {activeProduct.inStock > 0 && 
-            <Button className={classes.buyButton} onClick={() => addToCart(activeProduct)}>Add to Cart</Button>
+            <Button className={classes.buyButton} onClick={handleAddToCart}>Add to Cart</Button>
           }
 
           <Typography variant="h4" className={classes.sectionTitle}>Handpicked just for you</Typography>

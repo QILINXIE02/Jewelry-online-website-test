@@ -4,99 +4,135 @@
       "id": "1",
       "name": "rings",
       "displayName": "Rings",
-      "description": "Unique handcrafted rings with crystals and gemstones for every style."
+      "description": "Exquisite handcrafted rings featuring the finest crystals and gemstones, designed to elevate any ensemble."
     },
     {
       "id": "2",
       "name": "necklaces",
       "displayName": "Necklaces",
-      "description": "Elegant handcrafted crystal and gemstone necklaces for any occasion."
+      "description": "Elegant, handcrafted crystal and gemstone necklaces that exude sophistication and charm."
     },
     {
       "id": "3",
       "name": "bracelets",
       "displayName": "Bracelets",
-      "description": "Handmade bracelets with colorful gemstones and natural crystals."
+      "description": "Handmade bracelets with colorful gemstones and natural crystals to enhance style and wellness."
     },
     {
       "id": "4",
       "name": "earrings",
       "displayName": "Earrings",
-      "description": "Delicate earrings crafted with crystals, stones, and natural elements."
+      "description": "Delicate, artisanal earrings crafted with premium crystals and natural elements for timeless elegance."
     }
   ],
   "products": [
     {
       "id": "101",
       "category": "rings",
-      "name": "Amethyst Crystal Ring",
-      "description": "Handcrafted amethyst crystal ring set in silver, perfect for daily wear or meditation.",
-      "price": 35,
-      "inStock": 15,
+      "name": "Amethyst Serenity Ring",
+      "description": "Handcrafted amethyst ring set in polished sterling silver, radiating calm and elegance for daily wear or meditation rituals.",
+      "price": 42,
+      "inStock": 12,
       "image": "https://images.pexels.com/photos/2089339/pexels-photo-2089339.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "102",
       "category": "rings",
-      "name": "Rose Quartz Ring",
-      "description": "Soft rose quartz gemstone ring handmade for love and energy balance.",
-      "price": 38,
-      "inStock": 12,
+      "name": "Rose Quartz Harmony Ring",
+      "description": "Soft rose quartz gemstone ring, carefully handcrafted to inspire love, balance, and serenity.",
+      "price": 48,
+      "inStock": 10,
       "image": "https://images.pexels.com/photos/1770801/pexels-photo-1770801.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "103",
+      "category": "rings",
+      "name": "Citrine Radiance Ring",
+      "description": "Bright citrine crystal set in an elegant gold-plated band, designed to energize and uplift your style.",
+      "price": 55,
+      "inStock": 8,
+      "image": "https://images.pexels.com/photos/1385916/pexels-photo-1385916.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "201",
       "category": "necklaces",
-      "name": "Amethyst Pendant Necklace",
-      "description": "Handcrafted amethyst crystal pendant on a durable cotton cord, perfect for everyday wear.",
-      "price": 40,
-      "inStock": 18,
+      "name": "Amethyst Elegance Necklace",
+      "description": "Handcrafted amethyst pendant on a delicate silver chain, perfect for layering or a statement piece.",
+      "price": 60,
+      "inStock": 15,
       "image": "https://images.pexels.com/photos/2089339/pexels-photo-2089339.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "202",
       "category": "necklaces",
-      "name": "Rose Quartz Pendant Necklace",
-      "description": "Delicate rose quartz pendant on an adjustable chain, ideal for layering or solo wear.",
-      "price": 45,
-      "inStock": 15,
+      "name": "Rose Quartz Grace Necklace",
+      "description": "Delicate rose quartz pendant on an adjustable chain, offering elegance and harmony for any occasion.",
+      "price": 65,
+      "inStock": 12,
       "image": "https://images.pexels.com/photos/1840450/pexels-photo-1840450.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "203",
+      "category": "necklaces",
+      "name": "Citrine Sunshine Necklace",
+      "description": "Vibrant citrine gemstone pendant on a fine gold chain, designed to brighten your wardrobe and spirit.",
+      "price": 72,
+      "inStock": 10,
+      "image": "https://images.pexels.com/photos/1385916/pexels-photo-1385916.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "301",
       "category": "bracelets",
-      "name": "Citrine Beaded Bracelet",
-      "description": "Handmade citrine gemstone bracelet with natural crystals for positive energy.",
+      "name": "Amethyst Wellness Bracelet",
+      "description": "Elegant amethyst beaded bracelet handcrafted to inspire balance, mindfulness, and style.",
+      "price": 38,
+      "inStock": 20,
+      "image": "https://images.pexels.com/photos/1714843/pexels-photo-1714843.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "302",
+      "category": "bracelets",
+      "name": "Citrine Energy Bracelet",
+      "description": "Handmade citrine gemstone bracelet with natural crystals to encourage positive energy and creativity.",
       "price": 50,
       "inStock": 15,
       "image": "https://images.pexels.com/photos/1385916/pexels-photo-1385916.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "302",
+      "id": "303",
       "category": "bracelets",
-      "name": "Amethyst Beaded Bracelet",
-      "description": "Elegant amethyst beaded bracelet handcrafted for style and wellness.",
-      "price": 35,
-      "inStock": 20,
-      "image": "https://images.pexels.com/photos/1714843/pexels-photo-1714843.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "name": "Rose Quartz Harmony Bracelet",
+      "description": "Soft rose quartz stones arranged on a flexible band to bring love, balance, and subtle elegance.",
+      "price": 45,
+      "inStock": 18,
+      "image": "https://images.pexels.com/photos/1770801/pexels-photo-1770801.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "401",
       "category": "earrings",
-      "name": "Amethyst Drop Earrings",
-      "description": "Handmade amethyst crystal drop earrings, lightweight and stylish.",
-      "price": 35,
+      "name": "Amethyst Drop Elegance Earrings",
+      "description": "Handmade amethyst crystal drop earrings, lightweight, stylish, and perfect for any occasion.",
+      "price": 38,
       "inStock": 12,
       "image": "https://images.pexels.com/photos/2092312/pexels-photo-2092312.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "402",
       "category": "earrings",
-      "name": "Rose Quartz Stud Earrings",
-      "description": "Delicate rose quartz gemstone stud earrings, perfect for daily elegance.",
-      "price": 40,
+      "name": "Rose Quartz Stud Grace Earrings",
+      "description": "Delicate rose quartz gemstone studs crafted for daily elegance and subtle charm.",
+      "price": 42,
       "inStock": 15,
       "image": "https://images.pexels.com/photos/1770801/pexels-photo-1770801.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "403",
+      "category": "earrings",
+      "name": "Citrine Sunburst Earrings",
+      "description": "Handcrafted citrine gemstone earrings, adding a touch of sunshine and sophistication to your look.",
+      "price": 55,
+      "inStock": 10,
+      "image": "https://images.pexels.com/photos/1385916/pexels-photo-1385916.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ],
   "cart": []
